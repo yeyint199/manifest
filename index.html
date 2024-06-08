@@ -1258,12 +1258,11 @@
           [=localized member=].
         </p>
         <p>
-          [=Localized members=] contain a [=localization map=] that defines
+          [=Localized members=] contain a [=language map=] that defines
           [=localized values=] for different locales denoted by a [=language
-          tag=]. If present and if the [=localization map=] contains a
-          [=localized value=] that matches the user's localization settings,
-          the user agent SHOULD override the value of the [=localizable
-          member=].
+          tag=]. If present and if the [=language map=] contains a [=localized
+          value=] that matches the user's localization settings, the user agent
+          SHOULD override the value of the [=localizable member=].
         </p>
         <aside class="example" title=
         "Localizing the application name">
@@ -1279,7 +1278,7 @@
           </pre>
         </aside>
         <p>
-          The <dfn>localization map</dfn> is an [=ordered map=] whose key is a
+          The <dfn>language map</dfn> is an [=ordered map=] whose key is a
           [=language tag=] and whose value is a [=localized value=]. The
           <dfn>localized value</dfn> represents the value applied for the
           [=language tag=] specified as the key. The value matches the type of
@@ -1305,6 +1304,7 @@
           the [=manifest=]. 
           <!-- todo: maybe processed value of dir? or the default dir of the locale? -->
         </p><!-- todo: better example -->
+        <!-- todo: distinguish between text and image resource localization? -->
         <aside class="example" title="Advanced localization example">
           <pre class="json">
             {
@@ -1377,7 +1377,8 @@
               <li>Let |localizedMember| be |json|[|localizedMemberName|].
               </li>
               <li>If |localizedMember| is not an [=ordered map=], continue.
-              </li><!-- todo: any existing algorithm for this? -->
+              </li>
+              <!-- todo: any existing algorithm for this? lookup, rfc4647 -->
               <!-- todo: also take manifest's own lang into account -->
               <li>Let |languageKey| be the most suitable language key based on
               the user's localization settings from the [=map/keys=] of
